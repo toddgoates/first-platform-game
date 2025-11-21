@@ -1,6 +1,5 @@
-[gd_scene load_steps=15 format=3 uid="uid://dsiefo5hd1ymh"]
+[gd_scene load_steps=14 format=3 uid="uid://dsiefo5hd1ymh"]
 
-[ext_resource type="Script" uid="uid://betvm3sykrlmr" path="res://scripts/game_manager.gd" id="1_ejswk"]
 [ext_resource type="PackedScene" uid="uid://kdg6gpp65th5" path="res://scenes/player.tscn" id="1_g2h75"]
 [ext_resource type="PackedScene" uid="uid://cjrot0iq1wty4" path="res://scenes/hud.tscn" id="2_bbk5w"]
 [ext_resource type="Texture2D" uid="uid://bnj2bhg722o4o" path="res://assets/sprites/world_tileset.png" id="2_wwpf4"]
@@ -222,10 +221,6 @@ _data = {
 }
 
 [node name="level1" type="Node2D"]
-
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("1_ejswk")
 
 [node name="HUD" parent="." instance=ExtResource("2_bbk5w")]
 
