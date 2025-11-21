@@ -1,19 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://dsiefo5hd1ymh"]
+[gd_scene load_steps=15 format=3 uid="uid://dsiefo5hd1ymh"]
 
 [ext_resource type="Script" uid="uid://betvm3sykrlmr" path="res://scripts/game_manager.gd" id="1_ejswk"]
 [ext_resource type="PackedScene" uid="uid://kdg6gpp65th5" path="res://scenes/player.tscn" id="1_g2h75"]
-[ext_resource type="FontFile" uid="uid://dnbgs7cv3ue5r" path="res://assets/fonts/PixelOperator8.ttf" id="2_bbk5w"]
+[ext_resource type="PackedScene" uid="uid://cjrot0iq1wty4" path="res://scenes/hud.tscn" id="2_bbk5w"]
 [ext_resource type="Texture2D" uid="uid://bnj2bhg722o4o" path="res://assets/sprites/world_tileset.png" id="2_wwpf4"]
 [ext_resource type="PackedScene" uid="uid://kjbhdwfk1roe" path="res://scenes/platform.tscn" id="3_m7ahb"]
 [ext_resource type="PackedScene" uid="uid://ctht4ywgo64l1" path="res://scenes/coin.tscn" id="4_dwgg1"]
 [ext_resource type="PackedScene" uid="uid://1vbe0r5jf1oa" path="res://scenes/killzone.tscn" id="5_ru4tf"]
 [ext_resource type="PackedScene" uid="uid://b5k84c64yhivd" path="res://scenes/slime.tscn" id="6_6sh32"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_conm7"]
-font = ExtResource("2_bbk5w")
-font_size = 24
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m7ahb"]
 texture = ExtResource("2_wwpf4")
@@ -233,15 +227,7 @@ _data = {
 unique_name_in_owner = true
 script = ExtResource("1_ejswk")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="CoinCounter" type="Label" parent="CanvasLayer"]
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 82.0
-offset_bottom = 39.0
-text = "COINS: 0"
-label_settings = SubResource("LabelSettings_conm7")
+[node name="HUD" parent="." instance=ExtResource("2_bbk5w")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_dwgg1")
