@@ -14,6 +14,13 @@ func add_coin():
 	var coin_label = get_tree().current_scene.get_node("HUD/CoinCounter")
 	coin_label.text = "COINS: " + str(coins)
 	print(coins)
+	
+func add_life():
+	print("YOU GAINED A LIFE!")
+	lives += 1
+	
+	var lives_label = get_tree().current_scene.get_node("HUD/LivesCounter")
+	lives_label.text = "LIVES: " + str(lives)
 	 
 func lose_life():
 	print("YOU LOST A LIFE!")
