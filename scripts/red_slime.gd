@@ -1,0 +1,39 @@
+extends Node2D
+
+# ---------------------------------------------------------
+# CONSTANTS
+# ---------------------------------------------------------
+
+const SPEED = 100;
+
+
+# ---------------------------------------------------------
+# STATE VARIABLES
+# ---------------------------------------------------------
+
+var direction = 1;
+
+
+# ---------------------------------------------------------
+# NODES
+# ---------------------------------------------------------
+
+@onready var ray_cast_left: RayCast2D = $RayCastLeft
+@onready var ray_cast_right: RayCast2D = $RayCastRight
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+
+# ---------------------------------------------------------
+# MOVEMENT & PHYSICS
+# ---------------------------------------------------------
+
+func _process(delta: float) -> void:
+	if ray_cast_right.is_colliding():
+		direction = -1
+		animated_sprite.flip_h = true
+				
+	if ray_cast_left.is_colliding():
+		direction = 1
+		animated_sprite.flip_h = false
+	
+	position.x += direction * SPEED * delta

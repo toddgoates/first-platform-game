@@ -1,6 +1,9 @@
 extends Node
 
+signal required_coins_reached
+
 var coins = 0
+var required_coins = 10
 var lives := 3
 
 func reset_coins():
@@ -13,17 +16,17 @@ func add_coin():
 	coins += 1
 	var coin_label = get_tree().current_scene.get_node("HUD/CoinCounter")
 	coin_label.text = "COINS: " + str(coins)
-	print(coins)
+	
+	if coins == required_coins:
+		emit_signal("required_coins_reached")
 	
 func add_life():
-	print("YOU GAINED A LIFE!")
 	lives += 1
 	
 	var lives_label = get_tree().current_scene.get_node("HUD/LivesCounter")
 	lives_label.text = "LIVES: " + str(lives)
 	 
 func lose_life():
-	print("YOU LOST A LIFE!")
 	lives -= 1
 	
 	var lives_label = get_tree().current_scene.get_node("HUD/LivesCounter")

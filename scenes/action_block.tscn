@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjpamkt0aifo3"]
+
+[ext_resource type="Texture2D" uid="uid://bnj2bhg722o4o" path="res://assets/sprites/world_tileset.png" id="1_j2tux"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2tux"]
+size = Vector2(16, 16)
+
+[node name="ActionButton" type="Node2D"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("1_j2tux")
+region_enabled = true
+region_rect = Rect2(32, 48, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_j2tux")
