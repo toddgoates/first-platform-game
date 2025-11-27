@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=4 uid="uid://dsiefo5hd1ymh"]
+[gd_scene load_steps=22 format=4 uid="uid://dsiefo5hd1ymh"]
 
 [ext_resource type="PackedScene" uid="uid://kdg6gpp65th5" path="res://scenes/player.tscn" id="1_g2h75"]
 [ext_resource type="PackedScene" uid="uid://cjrot0iq1wty4" path="res://scenes/hud.tscn" id="2_bbk5w"]
 [ext_resource type="Texture2D" uid="uid://bnj2bhg722o4o" path="res://assets/sprites/world_tileset.png" id="2_wwpf4"]
 [ext_resource type="PackedScene" uid="uid://kjbhdwfk1roe" path="res://scenes/platform.tscn" id="3_m7ahb"]
+[ext_resource type="Script" uid="uid://cxu1vh8c8rti8" path="res://scripts/camera.gd" id="4_2ku1j"]
 [ext_resource type="PackedScene" uid="uid://ctht4ywgo64l1" path="res://scenes/coin.tscn" id="4_dwgg1"]
 [ext_resource type="PackedScene" uid="uid://1vbe0r5jf1oa" path="res://scenes/killzone.tscn" id="5_ru4tf"]
 [ext_resource type="PackedScene" uid="uid://b5k84c64yhivd" path="res://scenes/green_slime.tscn" id="6_6sh32"]
@@ -290,6 +291,7 @@ zoom = Vector2(4, 4)
 limit_bottom = 100
 limit_smoothed = true
 position_smoothing_enabled = true
+script = ExtResource("4_2ku1j")
 
 [node name="Killzone" parent="." instance=ExtResource("5_ru4tf")]
 position = Vector2(-394, 68)

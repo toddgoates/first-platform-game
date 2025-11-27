@@ -8,5 +8,9 @@ func _ready():
 
 func _on_items_reached():
 	explosion_sound.play()
+	
+	for cam in get_tree().get_nodes_in_group("camera"):
+		cam.shake(4)
+	
 	await explosion_sound.finished
 	queue_free()
