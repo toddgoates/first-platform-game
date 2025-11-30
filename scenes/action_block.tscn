@@ -1,18 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjpamkt0aifo3"]
+[gd_scene load_steps=4 format=3 uid="uid://cjpamkt0aifo3"]
 
 [ext_resource type="Texture2D" uid="uid://bnj2bhg722o4o" path="res://assets/sprites/world_tileset.png" id="1_j2tux"]
+[ext_resource type="Script" uid="uid://bhpdgpiutq5dp" path="res://scripts/action_block.gd" id="1_wdm5f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2tux"]
 size = Vector2(16, 16)
 
-[node name="ActionButton" type="Node2D"]
+[node name="ActionBlock" type="Area2D"]
+script = ExtResource("1_wdm5f")
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_j2tux")
 region_enabled = true
 region_rect = Rect2(32, 48, 16, 16)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_j2tux")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
