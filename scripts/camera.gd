@@ -1,7 +1,7 @@
 extends Camera2D
 
-var shake_intensity: float = 0.0
-var shake_decay: float = 3.5
+@export var shake_intensity: float
+@export var shake_decay: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

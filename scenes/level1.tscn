@@ -296,6 +296,7 @@ limit_bottom = 100
 limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("4_2ku1j")
+shake_decay = 3.5
 
 [node name="Killzone" parent="." instance=ExtResource("5_ru4tf")]
 position = Vector2(-394, 68)
